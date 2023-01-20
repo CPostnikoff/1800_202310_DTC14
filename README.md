@@ -8,7 +8,7 @@ This browser based web application to ...
 List team members and/or short bio's here... 
 * Cameron - I'm looking forward to building something in a team
 * Hello. Adam is changing this line! Make way!
-* My name is Marco and I used to be an illustrator!
+* My name is Marco and I used to be an illustrator!!
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.

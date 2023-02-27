@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Library CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Boostrap Library JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- These styles are STRICTLY for styling the template -->
+    <style>
+        .container {
+            background-color: hsl(0, 0%, 75%) !important;
+            border-radius: 10px !important;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        h2,
+        h4 {
+            font-weight: bold;
+        }
+
+        h2 {
+            padding: 20px;
+        }
+
+        .text_center {
+            text-align: center;
+        }
+
+        /* This is used to align text and icons on buttons */
+        .inline_icon {
+            vertical-align: bottom !important;
+        }
+
+        .floating_icons_right {
+            position: absolute;
+            top: 20px;
+            right: 55px;
+        }
+
+        .floating_icons_left {
+            position: absolute;
+            top: 20px;
+            left: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+
+    <div class="container text_center">
+        <h2 id="location_name">Location Name</h2>
+        <div class="row">
+            <div class="container" style="position:relative">
+                <img src="https://via.placeholder.com/2000" alt="location image" class="location_image">
+
+                <div class="floating_icons_right">
+                    <a><i class="inline_icon  material-icons" style="font-size: 48px;">drive_eta</i></a>
+                    <a><i class="inline_icon material-icons" style="font-size: 48px;">directions_walk</i></a>
+                    <a><i class="inline_icon material-icons" style="font-size: 48px;">train</i></a>
+                </div>
+
+                <div class="floating_icons_left">
+                    <a><i class="inline_icon material-icons" style="font-size: 48px;">explore</i></a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row text_center">
+            <div id="location_options">
+                <button id="get_directions" class="btn btn-primary">
+                    <i class="inline_icon material-icons">map</i>
+                    Open in Google Maps
+                </button>
+                <button id="favourite_location" class="btn btn-secondary">
+                    <i class="inline_icon material-icons">directions</i>
+                    Open in Default Map
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Distance</h2>
+                <h3>10.5km</h3>
+            </div>
+            <div class="col">
+                <h2>Duration <i class="inline_icon material-icons" style="font-size: 36px;">drive_eta</i></h2>
+                <h3>38 Minutes</h3>
+            </div>
+        </div>
+
+        <br>
+
+        <div id="location_description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore illo quibusdam vitae tempora,
+                enim corporis, cum provident temporibus corrupti, porro voluptate incidunt delectus? Natus provident
+                unde
+                iusto, vel, maxime labore suscipit cum vero, nisi nobis est nulla. Atque quam odio veniam et quibusdam
+                ut
+                repellendus alias! Perspiciatis, numquam vero.</p>
+        </div>
+
+        <br>
+
+</body>
+
+</html>

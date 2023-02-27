@@ -18,10 +18,6 @@
 
     <!-- These styles are STRICTLY for styling the template -->
     <style>
-        * {
-            text-align: center !important;
-        }
-
         .container {
             background-color: hsl(0, 0%, 75%) !important;
             border-radius: 10px !important;
@@ -29,6 +25,8 @@
 
         img {
             border-radius: 10px;
+            max-width: 100%;
+            height: 100%;
         }
 
         h2,
@@ -40,8 +38,12 @@
             padding: 20px;
         }
 
+        .text_center {
+            text-align: center;
+        }
+
         /* This is used to align text and icons on buttons */
-        .inline-icon {
+        .inline_icon {
             vertical-align: bottom !important;
         }
     </style>
@@ -51,12 +53,14 @@
 
     <br>
 
-    <div class="container">
+    <div class="container text_center">
         <h2 id="location_name">Location Name</h2>
         <div id="">
             <div class="row">
                 <div class="col">
-                    <img src="https://via.placeholder.com/450" alt="location image">
+                    <div>
+                        <img src="https://via.placeholder.com/750" alt="location image" class="location_image">
+                    </div>
                 </div>
                 <div class="col-4">
                     <div class="row">
@@ -83,14 +87,14 @@
 
         <br>
 
-        <div class="row">
+        <div class="row text_center">
             <div id="location_options">
                 <button id="get_directions" class="btn btn-primary">
-                    <i class="inline-icon material-icons">assistant_navigation</i>
+                    <i class="inline_icon material-icons">assistant_navigation</i>
                     Directions
                 </button>
                 <button id="favourite_location" class="btn btn-secondary">
-                    <i class="inline-icon material-icons">favorite</i>
+                    <i class="inline_icon material-icons">favorite</i>
                     Favourite
                 </button>
             </div>

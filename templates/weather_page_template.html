@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather card template</title>
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Boostrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- Stylesheet specific for the weather card-->
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            background: white;
+        }
+
+        .weatherCard, .weatherTimeForecast, .extraInfoCards > div {
+            background: #f6f6f6;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+    </style>
+
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <!-- Weather card -->
+        <div class="weatherCard container p-4"s>
+            <div class="row">
+                <div class="col-12 container text-center">
+                    <h1 id="locationName border-bottom border-dark-subtle">Location</h1>
+
+                    <div class="row pt-4">
+                        <!-- Current Temperature button: click for more detailed info -->
+                        <div class="currentTemp col-6 text-center">
+                            <h2>Temperature</h2>
+                            <p class="display-6">10°C</p>
+                        </div>
+                        <!-- Current Weather button: click for more detailed info -->
+                        <div class="currentWeather col-6">
+                            <h2>Current Weather</h2>
+                            <span class="material-symbols-outlined">
+                                partly_cloudy_day
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Weather/Temperature by time Card -->
+        <div class="weatherTimeForecast container p-4 text-center">
+            <div class="row">
+                <h5 class="col">Today</h5>
+                <h5 class="col">7 days</h5>
+            </div>
+            <div class="row">
+                <div class="col-12 container text-center">
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Time</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Temp</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Weather</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="extraInfoCards container">
+            <div class="row">
+                <!-- UV Index Card -->
+                <div class="container p-2 col border-end border-dark-subtle">
+                    <div class="row">
+                        <div class="col-12 container text-center">
+                            <h5 id="locationName border-bottom border-dark-subtle">UV Index</h5>
+                            <span class="material-symbols-outlined">
+                                sunny
+                            </span>
+                            <p class="display-9">1</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rain Card -->
+                <div class="rainCard container p-2 col border-end border-dark-subtle">
+                    <div class="row">
+                        <div class="col-12 container text-center">
+                            <h5>Rain</h5>
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span>
+                            <p class="display-9">5%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wind Card -->
+                <div class="rainCard container p-2 col">
+                    <div class="row">
+                        <div class="col-12 container text-center">
+                            <h5>Wind</h5>
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span>
+                            <p class="display-9">5%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </main>
+</body>
+
+</html>

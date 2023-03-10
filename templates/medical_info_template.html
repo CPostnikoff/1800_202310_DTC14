@@ -15,6 +15,18 @@
         crossorigin="anonymous"></script>
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"/>
+
     <style>
         h2,
         h1 {
@@ -39,9 +51,9 @@
         <div id="page-card"
             style="background: #f6f6f6; border: 1px solid #e3e3e3; margin-top: 15px; border-radius: 3px;">
             <div class="container">
-                <h1>Lorem ipsum</h1>
+                <h1 id="ailment-name">Lorem ipsum</h1>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores deleniti nam ipsam accusantium
+                <p id="symptoms">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores deleniti nam ipsam accusantium
                     dignissimos libero quae quos dolores quibusdam temporibus? Lorem ipsum dolor sit amet, consectetur
                     adipisicing elit. Excepturi, unde.</p>
                 <br>
@@ -59,7 +71,7 @@
                         <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
                             <b>1.</b>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10" id="step-0">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, pariatur.
                         </div>
                     </div>
@@ -70,7 +82,7 @@
                         <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
                             <b>2.</b>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10" id="step-1">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, pariatur.
                         </div>
                     </div>
@@ -81,7 +93,18 @@
                         <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
                             <b>3.</b>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10" id="step-2">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, pariatur.
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="step-box">
+                    <div class="row" style="margin-left: 5%; margin-right: 5%;">
+                        <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
+                            <b>4.</b>
+                        </div>
+                        <div class="col-10" id="step-3">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, pariatur.
                         </div>
                     </div>
@@ -92,6 +115,8 @@
 
     <!-- Insert footer template here -->
 
+    <script src="../scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="../scripts/medical_info.js"></script>
 </body>
 
 </html>

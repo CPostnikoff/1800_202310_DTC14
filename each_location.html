@@ -28,6 +28,10 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <style>
+        h1 {
+            text-align: center;
+        }
+
         h2 {
             font-weight: bold;
         }
@@ -43,12 +47,14 @@
         }
 
         .container {
-            background-color: hsl(0, 0%, 75%) !important;
-            border-radius: 10px !important;
+
+            padding-top: 15px !important;
         }
 
         .row {
-            padding: 15px 0px 15px 6px;
+            border-radius: 10px !important;
+            background-color: hsl(0, 0%, 75%) !important;
+            padding: 15px 0px 15px 6px !important;
         }
 
         #locationCardTemplate {
@@ -60,7 +66,7 @@
 <body>
 
     <div class="container">
-        <h1>List of Locations</h1>
+        <h1>LIST OF LOCATIONS</h1>
         <div id="locations-go-here" class="col">
         </div>
     </div>

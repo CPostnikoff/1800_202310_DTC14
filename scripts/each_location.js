@@ -1,3 +1,13 @@
+function correctedTitle(title) {
+    to_cap = title.split("_");
+    for (i = 0; i < to_cap.length; i++) {
+        to_cap[i] = to_cap[i].charAt(0).toUpperCase() + to_cap[i].slice(1);
+    }
+    final_title = to_cap.join(" ");
+    return final_title
+}
+
+
 function displayLocationsDynamically(collection) {
     let locationCardTemplate = document.getElementById("locationCardTemplate")
 
@@ -5,7 +15,7 @@ function displayLocationsDynamically(collection) {
         .then(allLocations => {
             allLocations.forEach(doc => {
                 console.log(doc.data())
-                var title = doc.id;
+                var title = correctedTitle(doc.id);
                 var details = doc.data().description;
                 var image = doc.data().picture;
 

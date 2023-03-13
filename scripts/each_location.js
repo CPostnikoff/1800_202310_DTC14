@@ -24,6 +24,7 @@ function displayLocationsDynamically(collection) {
                 newcard.querySelector('.location_name').innerHTML = title;
                 newcard.querySelector('.location_description').innerHTML = details;
                 newcard.querySelector('.location_image').src = image;
+                newcard.querySelector('a').href = "./templates/location_page_template.html?docID=" + doc.id;
 
                 document.getElementById(collection + "-go-here").appendChild(newcard)
             })

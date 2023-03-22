@@ -18,15 +18,18 @@ function displayLocationDetails() {
     db.collection("locations").doc(current_location).get()
         .then(current_location => {
             console.log(current_location.data())
-            var title = correctedTitle(window.location.href.split("=")[1]);
+            var url_end = window.location.href.split("=")[1]
+            var title = correctedTitle(url_end);
             var details = current_location.data().description;
             var image = current_location.data().picture;
+            console.log(url_end)
             console.log(title)
             console.log(details)
             console.log(image)
-            document.querySelector('#location_name').innerHTML = title;
-            document.querySelector('#location_description').innerHTML = details;
-            document.querySelector('#location_image').src = image;
+            document.querySelector('.location_name').innerHTML = title;
+            document.querySelector('.location_description').innerHTML = details;
+            document.querySelector('.location_image').src = image;
+            document.querySelector('a').href = "../templates/location_directions_template.html?docID=" + url_end;
         })
 }
 

@@ -33,12 +33,13 @@
             background: white;
         }
 
-        .weatherCard, .weatherTimeForecast, .extraInfoCards > div {
+        .weatherCard,
+        .weatherTimeForecast,
+        .extraInfoCards>div {
             background: #f6f6f6;
             margin-top: 15px;
             border-radius: 10px;
         }
-
     </style>
 
     </style>
@@ -48,7 +49,7 @@
 <body>
     <main>
         <!-- Weather card -->
-        <div class="weatherCard container p-4"s>
+        <div class="weatherCard container p-4" s>
             <div class="row">
                 <div class="col-12 container text-center">
                     <h1 id="locationName border-bottom border-dark-subtle">Location</h1>
@@ -67,102 +68,6 @@
                             </span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Weather/Temperature by time Card -->
-        <div class="weatherTimeForecast container p-4 text-center">
-            <div class="row">
-                <h5 class="col">Today</h5>
-                <h5 class="col">7 days</h5>
-            </div>
-            <div class="row">
-                <div class="col-12 container text-center">
-                    <div class="row">
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Time</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Temp</p>
-                        </div>
-                        <div class="col-2">
-                            <p>Weather</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -199,14 +104,80 @@
                         <div class="col-12 container text-center">
                             <h5>Wind</h5>
                             <span class="material-symbols-outlined">
-                                water_drop
+                                air
                             </span>
                             <p class="display-9">5%</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- Weather/Temperature by time Card -->
+        <div class="weatherTimeForecast container p-4 text-center">
+            <div class="row">
+                <button type="button" class="col-6 btn btn-secondary">
+                    <h5>Days</h5>
+                </button>
+                <button type="button" class="col-6 btn btn-secondary">
+                    <h5>Month</h5>
+                </button>
+            </div>
+            <div class="row p-2">
+                <div class="col-4 text-start">
+                    <h4>Tomorrow</h4>
+                </div>
+                <div class="col-4 align-self-center">
+                    <h5>Weather</h5>
+                </div>
+                <div class="col-4 align-self-center align-items-center">
+                    <h5>Temperature</h5>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4 text-start">
+                    <h4>Friday</h4>
+                </div>
+                <div class="col-4 align-self-center">
+                    <h5>Weather</h5>
+                </div>
+                <div class="col-4 align-self-center align-items-center">
+                    <h5>Temperature</h5>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4 text-start">
+                    <h4>Saturday</h4>
+                </div>
+                <div class="col-4 align-self-center">
+                    <h5>Weather</h5>
+                </div>
+                <div class="col-4 align-self-center align-items-center">
+                    <h5>Temperature</h5>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4 text-start">
+                    <h4>Sunday</h4>
+                </div>
+                <div class="col-4 align-self-center">
+                    <h5>Monday</h5>
+                </div>
+                <div class="col-4 align-self-center align-items-center">
+                    <h5>Temperature</h5>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4 text-start">
+                    <h4>Tuesday</h4>
+                </div>
+                <div class="col-4 align-self-center">
+                    <h5>Weather</h5>
+                </div>
+                <div class="col-4 align-self-center align-items-center">
+                    <h5>Temperature</h5>
+                </div>
+            </div>
 
     </main>
 </body>

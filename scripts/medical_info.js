@@ -1,7 +1,7 @@
-function displayMedicalInfo() {
-    db.collection("medical_info").get().then(ailment => {
-        ailment.forEach(doc => {
-            ailmentInfo = doc.data()
+function displayMedicalInfo(ailmentID) {
+    db.collection("medical_info").doc(ailmentID).get().then(ailment => {
+        if (ailment.exists) {
+            ailmentInfo = ailment.data()
             ailmentName = ailmentInfo.name
             ailmentSymptoms = ailmentInfo.symptoms 
             ailmentTreatment = ailmentInfo.treatment
@@ -30,7 +30,10 @@ function displayMedicalInfo() {
                 steps.push(stepDiv)    
             });
             steps.forEach(step => parent.appendChild(step))
-        })
+        }
+        else {
+            console.log("This document does not exist.")
+        }
     })
 }
-displayMedicalInfo()
+displayMedicalInfo("heatstroke")

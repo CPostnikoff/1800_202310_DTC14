@@ -29,7 +29,7 @@ function displayLocationDetails() {
             document.querySelector('.location_name').innerHTML = title;
             document.querySelector('.location_description').innerHTML = details;
             document.querySelector('.location_image').src = image;
-            document.querySelector('a').href = "../templates/location_directions_template.html?docID=" + url_end;
+            document.querySelector('.page-a').href = "../templates/location_directions_template.html?docID=" + url_end;
         })
 }
 

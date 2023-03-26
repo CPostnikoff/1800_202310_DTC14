@@ -42,10 +42,10 @@ function displayLocationsDynamically(collection) {
                 newcard.querySelector('a').href = "./templates/location_page_template.html?docID=" + doc.id;
                 newcard.querySelector('.container').id = doc.id;
 
-
                 document.getElementById(collection + "-go-here").appendChild(newcard)
             })
         })
+    console.log(all_locations)
 }
 
 function filterDisplayedLocations(tag_to_filter) {

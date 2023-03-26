@@ -36,26 +36,22 @@
 
     <!-- These styles are STRICTLY for styling the template -->
     <style>
-        .container_background {
-            background-color: hsl(0, 0%, 75%) !important;
-            border-radius: 10px !important;
+        * {
+            color: white
         }
 
-        img {
-            display: block;
-            max-width: 100%;
-            height: 100%;
-            padding-left: 20px;
-            padding-right: 20px;
+        .container_background {
+            background-color: #0378A6 !important;
+            border-radius: 10px !important;
         }
 
         h2,
         h4 {
-            font-weight: bold;
+            font-weight: bold !important;
         }
 
-        p {
-            font-size: 1.6rem;
+        .location_description {
+            font-size: 20rem !important;
         }
 
         h2 {
@@ -71,16 +67,9 @@
             vertical-align: bottom !important;
         }
 
-        .floating_icons_right {
-            position: absolute;
-            top: 20px;
-            right: 55px;
-        }
-
-        .floating_icons_left {
-            position: absolute;
-            top: 20px;
-            left: 55px;
+        .body-container {
+            margin-top: 100px;
+            margin-bottom: 100px;
         }
 
         #map {
@@ -90,56 +79,48 @@
 </head>
 
 <body>
-    <br>
 
-    <div class="container container_background text_center">
-        <h2 id="location_name">Location Name</h2>
-        <div class="row">
-            <div class="container">
-                <div id='map' style='width:100%;height:60vh'></div>
+    <nav id="topNavbar"></nav>
+
+    <main>
+        <div class="container container_background text_center body-container">
+            <h2 id="location_name">Location Name</h2>
+            <div class="row">
+                <div class="container">
+                    <div id='map' style='width:100%;height:60vh'></div>
+                </div>
             </div>
-        </div>
-
-        <br>
-
-        <!-- <div class="row text_center">
-            <div id="location_options">
-                <button id="get_directions" class="btn btn-primary">
-                    <i class="inline_icon material-icons">map</i>
-                    Open in Google Maps
-                </button>
-                <button id="favourite_location" class="btn btn-secondary">
-                    <i class="inline_icon material-icons">directions</i>
-                    Open in Default Map
-                </button>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h2>Distance</h2>
+                    <h3 id="travel_distance">NAN</h3>
+                </div>
+                <div class="col">
+                    <h2>Duration <i class="inline_icon material-icons" style="font-size: 24px;">drive_eta</i></h2>
+                    <h3 id="travel_time">NAN</h3>
+                </div>
             </div>
-        </div> -->
-
-        <div class="row">
-            <div class="col">
-                <h2>Distance</h2>
-                <h3 id="travel_distance">NAN</h3>
-            </div>
-            <div class="col">
-                <h2>Duration <i class="inline_icon material-icons" style="font-size: 36px;">drive_eta</i></h2>
-                <h3 id="travel_time">NAN</h3>
-            </div>
-        </div>
-
-        <br>
-
-        <div id="location_description">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore illo quibusdam vitae tempora,
+            <br>
+            <div id="location_description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore illo quibusdam vitae
+                tempora,
                 enim corporis, cum provident temporibus corrupti, porro voluptate incidunt delectus? Natus provident
                 unde
-                iusto, vel, maxime labore suscipit cum vero, nisi nobis est nulla. Atque quam odio veniam et quibusdam
+                iusto, vel, maxime labore suscipit cum vero, nisi nobis est nulla. Atque quam odio veniam et
+                quibusdam
                 ut
-                repellendus alias! Perspiciatis, numquam vero.</p>
+                repellendus alias! Perspiciatis, numquam vero.
+            </div>
+            <br>
         </div>
+    </main>
 
-        <br>
-        <script src="../scripts/firebaseAPI_TEAMDTC14.js"></script>
-        <script src="../scripts/location_directions_page.js"></script>
+    <nav id="bottomNavbar"></nav>
+
+    <script src="/scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="/scripts/location_directions_page.js"></script>
+    <script src="/scripts/skeleton.js"></script>
 </body>
 
 </html>

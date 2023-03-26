@@ -34,8 +34,9 @@
     <!-- These styles are STRICTLY for styling the template -->
     <style>
         .container_background {
-            background-color: hsl(0, 0%, 75%) !important;
+            background-color: #0378a6 !important;
             border-radius: 10px !important;
+            color: white;
         }
 
         img {
@@ -50,7 +51,7 @@
 
         h2,
         h4 {
-            font-weight: bold;
+            font-weight: bold !important;
         }
 
         h2 {
@@ -66,91 +67,92 @@
             vertical-align: bottom !important;
         }
 
-        .floating_icons_right {
-            position: absolute;
-            top: 20px;
-            right: 30px;
+        .body-container {
+            margin-top: 100px;
+            margin-bottom: 100px;
         }
 
-        .floating_icons_left {
-            position: absolute;
-            top: 20px;
-            left: 30px;
+        .page-btn,
+        .page-a {
+            background-color: #f26444 !important;
+            color: white !important;
         }
     </style>
 </head>
 
 <body>
 
-    <br>
+    <nav id="topNavbar"></nav>
 
-    <div class="container container_background text_center">
-        <h2 class="location_name">Location Name</h2>
-        <div id="">
-            <div class="row">
-                <div class="col">
-                    <div class="container" style="position:relative">
-                        <img id="location_image" src="https://via.placeholder.com/2000" alt="location image"
-                            class="location_image">
+    <main>
+        <div class="container container_background text_center body-container">
+            <h2 class="location_name">Location Name</h2>
+            <div id="">
+                <div class="row">
+                    <div class="col">
+                        <div class="container" style="position:relative">
+                            <img id="location_image" src="https://via.placeholder.com/2000" alt="location image"
+                                class="location_image">
+                        </div>
                     </div>
-                </div>
-                <div class="col-3">
-                    <div class="row">
-                        <h4>Temperature</h4>
-                    </div>
-                    <div class="row">
-                        <p id="location_temperature">30 / 86</p>
-                    </div>
-                    <div class="row">
-                        <h4>UV Index</h4>
-                    </div>
-                    <div class="row">
-                        <p id="location_uv_index">3 - 5</p>
-                    </div>
-                    <div class="row">
-                        <h4>Air Quality</h4>
-                    </div>
-                    <div class="row">
-                        <p id="location_air_quality">3 - Low risk</p>
+                    <div class="col-3">
+                        <div class="row">
+                            <h4>Temperature</h4>
+                        </div>
+                        <div class="row">
+                            <p id="location_temperature">30 / 86</p>
+                        </div>
+                        <div class="row">
+                            <h4>UV Index</h4>
+                        </div>
+                        <div class="row">
+                            <p id="location_uv_index">3 - 5</p>
+                        </div>
+                        <div class="row">
+                            <h4>Air Quality</h4>
+                        </div>
+                        <div class="row">
+                            <p id="location_air_quality">3 - Low risk</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <br>
-        <hr>
-        <br>
-
-        <div class="row text_center">
-            <div id="location_options">
-
-                <a class="btn btn-primary"><span class="inline_icon material-icons">assistant_navigation</span>
-                    Directions</a>
-                <button id="favourite_location" class="btn btn-secondary">
-                    <i class="inline_icon material-icons">favorite</i>
-                    Favourite
-                </button>
+            <br>
+            <hr>
+            <br>
+            <div class="row text_center">
+                <div id="location_options">
+                    <a class="btn btn-primary page-a"><span
+                            class="inline_icon material-icons">assistant_navigation</span>
+                        Directions</a>
+                    <button id="favourite_location" class="btn btn-secondary">
+                        <i class="inline_icon material-icons">favorite</i>
+                        Favourite
+                    </button>
+                </div>
             </div>
-        </div>
+            <br>
+            <div>
+                <p class="location_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+                    labore
+                    illo quibusdam vitae tempora,
+                    enim corporis, cum provident temporibus corrupti, porro voluptate incidunt delectus? Natus provident
+                    unde
+                    iusto, vel, maxime labore suscipit cum vero, nisi nobis est nulla. Atque quam odio veniam et
+                    quibusdam
+                    ut
+                    repellendus alias! Perspiciatis, numquam vero.</p>
+            </div>
+            <br>
+    </main>
 
-        <br>
-
-        <div>
-            <p class="location_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore
-                illo quibusdam vitae tempora,
-                enim corporis, cum provident temporibus corrupti, porro voluptate incidunt delectus? Natus provident
-                unde
-                iusto, vel, maxime labore suscipit cum vero, nisi nobis est nulla. Atque quam odio veniam et quibusdam
-                ut
-                repellendus alias! Perspiciatis, numquam vero.</p>
-        </div>
-
-        <br>
+    <nav id="bottomNavbar"></nav>
 
     </div>
 
-    <script src="../scripts/firebaseAPI_TEAMDTC14.js"></script>
-    <script src="../scripts/location_page.js"></script>
+    <script src="/scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="/scripts/location_page.js"></script>
+    <script src="/scripts/skeleton.js"></script>
 
     <!-- Insert footer template here -->
 

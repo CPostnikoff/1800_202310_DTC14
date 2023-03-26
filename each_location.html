@@ -30,10 +30,14 @@
     <style>
         h1 {
             text-align: center;
+            font-size: 5em !important;
+            font-weight: 600 !important;
+            color: white !important;
+            text-shadow: -1px -1px 0 #0378a6, 1px -1px #0378a6, -1px 1px 0 #0378a6, 1px 1px 0 #0378a6;
         }
 
         h2 {
-            font-weight: bold;
+            font-weight: bold !important;
         }
 
         img {
@@ -46,37 +50,62 @@
             font-size: 1.6rem;
         }
 
-        .container {
+        .body-container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
 
-            padding-top: 15px !important;
+        .location-card {
+            background-color: #0378a6;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
         }
 
         .row {
             border-radius: 10px !important;
-            background-color: hsl(0, 0%, 75%) !important;
-            padding: 15px 0px 15px 6px !important;
         }
 
         #locationCardTemplate {
             padding-bottom: 200px !important;
+        }
+
+        .page-btn,
+        .page-a {
+            background-color: #f26444 !important;
+            color: white !important;
+        }
+
+        #button_cluster {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>LIST OF LOCATIONS</h1>
-        <button id="Outdoors" class="">Outdoors</button>
-        <button id="Indoors" class="">Indoors</button>
-        <button id="Park" class="">Parks</button>
-        <button id="Pool" class="">Pools</button>
-        <div id="locations-go-here" class="col">
+    <nav id="topNavbar"></nav>
+
+    <main>
+        <div class="container body-container">
+            <!-- <h1>LOCATIONS</h1> -->
+            <div id="button_cluster">
+                <button id="Outdoors" class="btn page-btn">Outdoors</button>
+                <button id="Indoors" class="btn page-btn">Indoors</button>
+                <button id="Park" class="btn page-btn">Parks</button>
+                <button id="Pool" class="btn page-btn">Pools</button>
+            </div>
+            <div id="locations-go-here" class="col">
+            </div>
         </div>
-    </div>
+    </main>
+
+    <nav id="bottomNavbar"></nav>
 
     <template id="locationCardTemplate">
-        <div class="container">
+        <div class="container location-card">
             <div class="row">
                 <div class="col">
                     <div>
@@ -93,13 +122,14 @@
                         exercitationem consequuntur dolore quas! Impedit dolorum iure repellendus, cupiditate quis
                         dignissimos doloremque delectus.
                     </p>
-                    <a class="btn btn-primary card-href">Click Here</a>
+                    <a class="btn btn-primary card-href page-a">View More</a>
                 </div>
             </div>
     </template>
 
-    <script src="./scripts/firebaseAPI_TEAMDTC14.js"></script>
-    <script src="./scripts/each_location.js"></script>
+    <script src="/scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="/scripts/each_location.js"></script>
+    <script src="/scripts/skeleton.js"></script>
 </body>
 
 </html>

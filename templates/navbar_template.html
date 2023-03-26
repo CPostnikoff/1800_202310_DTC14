@@ -16,20 +16,31 @@
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        div {
+        .navlink {
             font-weight: bold;
+            font-size: 1.6rem;
         }
 
-        p {
-            font-size: 1.6rem;
+        .navbar {
+            color: white !important;
+            background-color: #0378a6 !important;
+            text-align: center;
+        }
+
+        footer {
+            border-top: 5px solid #f26444
+        }
+
+        .icon-box-text {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
 
-    <footer class="navbar bg-success py-3 fixed-bottom" style="text-align: center;">
-        <div class="container">
+    <footer class="navbar py-3 fixed-bottom">
+        <div class="container footer-container">
             <div class="icon-box" style="margin-left: 15px;">
                 <a href="#" class="nav-link">
                     <span class="material-icons">light_mode</span>
@@ -43,17 +54,17 @@
                 </a>
             </div>
             <div class="icon-box">
-                <a href="#" class="nav-link">
+                <a href="/each_location.html" class="nav-link">
                     <span class="material-icons">directions_run</span>
                     <div class="icon-box-text">Activites</div>
                 </a>
             </div>
-            <div class="icon-box">
+            <!-- <div class="icon-box">
                 <a href="#" class="nav-link">
                     <span class="material-icons">undo</span>
                     <div class="icon-box-text">Back</div>
                 </a>
-            </div>
+            </div> -->
             <div class="icon-box" style="margin-right: 15px;">
                 <a href="#" class="nav-link">
                     <span class="material-icons">account_circle</span>

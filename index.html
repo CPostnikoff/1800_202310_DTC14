@@ -21,6 +21,15 @@
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
     <!-- Link to styles of your own -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
@@ -28,27 +37,7 @@
 
 <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
-
-    <nav class="navbar bg-success">
-        <div class=" container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./images/sunrise_logo.png" alt="" width="30" height="24"
-                    class="d-inline-block align-text-top">
-                Cool-Aid
-            </a>
-        </div>
-    </nav>
+    <nav id="topNavbar"></nav>
 
     <div class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4" src="./images/sunrise_logo.png" alt="" height="57">
@@ -56,21 +45,17 @@
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Your hub for keeping cool and staying safe during high-heat days.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Log in</button>
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3"
+                    onclick="location.href='login.html';">Log in</button>
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
             </div>
         </div>
     </div>
 
-    <footer class="navbar bg-success py-3 fixed-bottom">
-        <div class="container">
-            <span class="material-icons">favorite</span>
-            <span class="material-icons">home</span>
-            <span class="material-icons">map</span>
-            <span class="material-icons">undo</span>
-            <span class="material-icons">person</span>
-        </div>
-    </footer>
+    <nav id="bottomNavbar"></nav>
+
+    <script src="/scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="/scripts/skeleton.js"></script>
 
 </body>
 

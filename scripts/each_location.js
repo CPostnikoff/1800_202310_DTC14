@@ -73,19 +73,24 @@ function filterDisplayedLocations(tag_to_filter) {
                 document.getElementById(all_locations[i][0]).style.display = "none"
             }
         }
-
-    } else {
-        for (i = 0; i < all_locations.length; i++) {
-            if (all_locations[i][1].includes(tag_to_filter)) {
+    }
+        else if (tag_to_filter == "AllLocations") {
+            for (i = 0; i < all_locations.length; i++) {
                 document.getElementById(all_locations[i][0]).style.display = "Block"
             }
-            else {
-                document.getElementById(all_locations[i][0]).style.display = "none"
+        } else {
+            for (i = 0; i < all_locations.length; i++) {
+                if (all_locations[i][1].includes(tag_to_filter)) {
+                    document.getElementById(all_locations[i][0]).style.display = "Block"
+                }
+                else {
+                    document.getElementById(all_locations[i][0]).style.display = "none"
+                }
             }
         }
     }
-}
 
 
-displayLocationsDynamically("locations")
-button_selection()
+
+    displayLocationsDynamically("locations")
+    button_selection()

@@ -5,10 +5,10 @@ function verifyUserLogin() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             db.collection("users").doc(user.uid).get()
-            .then(userData => {
-                var favourites = userData.data().favourites;
-                all_favourite_locations = favourites
-            })
+                .then(userData => {
+                    var favourites = userData.data().favourites;
+                    all_favourite_locations = favourites
+                })
         } else {
             console.log("No user is signed in");
         }
@@ -65,15 +65,23 @@ function displayLocationsDynamically(collection) {
 }
 
 function filterDisplayedLocations(tag_to_filter) {
-    for (i = 0; i < all_locations.length; i++) {
-        if (all_locations[i][1].includes(tag_to_filter)) {
-            document.getElementById(all_locations[i][0]).style.display = "Block"
-        } 
-        else if (all_favourite_locations.includes(all_locations[i][0])) {
-            document.getElementById(all_locations[i][0]).style.display = "Block"
+    if (tag_to_filter == "Favourites") {
+        for (i = 0; i < all_locations.length; i++) {
+            if (all_favourite_locations.includes(all_locations[i][0])) {
+                document.getElementById(all_locations[i][0]).style.display = "Block"
+            } else {
+                document.getElementById(all_locations[i][0]).style.display = "none"
+            }
         }
-        else {
-            document.getElementById(all_locations[i][0]).style.display = "none"
+
+    } else {
+        for (i = 0; i < all_locations.length; i++) {
+            if (all_locations[i][1].includes(tag_to_filter)) {
+                document.getElementById(all_locations[i][0]).style.display = "Block"
+            }
+            else {
+                document.getElementById(all_locations[i][0]).style.display = "none"
+            }
         }
     }
 }

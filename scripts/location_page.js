@@ -51,7 +51,7 @@ function verifyUserLogin() {
         }
         else {
             console.log("User not logged in")
-            window.location.href = "../templates/login_template.html"
+            window.location.href = "./login.html"
         }
     })
 }

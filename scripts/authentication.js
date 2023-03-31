@@ -22,6 +22,7 @@ var uiConfig = {
             email: user.email, //with authenticated user's ID (user.uid)
             country: "Canada", //optional default profile info
             favourites: [], //users favourites
+            date_created: new Date()
           }).then(function () {
             console.log("New user added to firestore");
             window.location.assign("main.html"); //re-direct to main.html after signup

@@ -76,6 +76,14 @@
         .page-a {
             background-color: #f26444 !important;
             color: white !important;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .page-btn:focus,
+        .page-a:focus {
+            background-color: #0378a6 !important;
+            color: white !important;
         }
 
         #button_cluster {
@@ -90,8 +98,8 @@
 
     <main>
         <div class="container body-container">
-            <!-- <h1>LOCATIONS</h1> -->
             <div id="button_cluster">
+                <button id="AllLocations" class="btn page-btn">All Locations</button>
                 <button id="Outdoors" class="btn page-btn">Outdoors</button>
                 <button id="Indoors" class="btn page-btn">Indoors</button>
                 <button id="Park" class="btn page-btn">Parks</button>

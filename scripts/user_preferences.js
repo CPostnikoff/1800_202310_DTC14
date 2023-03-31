@@ -1,4 +1,13 @@
 //Function that calls everything needed for the main page  
+function correctedTitle(title) {
+    to_cap = title.split("_");
+    for (i = 0; i < to_cap.length; i++) {
+        to_cap[i] = to_cap[i].charAt(0).toUpperCase() + to_cap[i].slice(1);
+    }
+    final_title = to_cap.join(" ");
+    return final_title
+}
+
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -25,8 +34,15 @@ function insertAccountInfoFromFirestore() {
         var seconds = Math.floor(user_Creation / 1000);
         var nanoseconds = (user_Creation % 1000) * 1000000;
         var timestamp = new firebase.firestore.Timestamp(seconds, nanoseconds);
+        var favouriteLocations = userDoc.data().favourites;
+
+        for (i = 0; i < favouriteLocations.length; i++) {
+            let favourite = favouriteLocations[i]
+            document.getElementById("favourites-go-here").innerHTML += (favourite + "<br>")
+        }
         const date_format = { year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = new Intl.DateTimeFormat('en-US', date_format).format(timestamp.toDate()); // format the date using Intl.DateTimeFormat
+
 
         $("#creation-date-goes-here").text(formattedDate)
 

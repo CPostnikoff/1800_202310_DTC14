@@ -36,4 +36,11 @@ function displayMedicalInfo(ailmentID) {
         }
     })
 }
-displayMedicalInfo("heatstroke")
+
+function getURL() {
+    var url = window.location.href;
+    var docID = url.split("=")[1]
+    console.log(docID)
+    displayMedicalInfo(docID)
+}
+getURL()

@@ -25,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"/>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <style>
         h2,
@@ -42,52 +42,59 @@
             font-size: 1.6rem !important;
             padding: 10px !important;
         }
+
+        .body-container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div id="page-card"
-            style="background: #f6f6f6; border: 1px solid #e3e3e3; margin-top: 15px; border-radius: 3px;">
-            <div class="container">
-                <h1 id="ailment-name">Lorem ipsum</h1>
-                <br>
-                <p id="symptoms">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores deleniti nam ipsam accusantium
-                    dignissimos libero quae quos dolores quibusdam temporibus? Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Excepturi, unde.</p>
-                <br>
-                <div id="emergency-button" style="text-align: center;">
-                    <button class="btn btn-danger w-75">
-                        <span class="material-icons">call</span>
-                        <b>911</b>
-                    </button>
-                </div>
-                <br>
-                <h2>Treatment steps</h2>
-                <br>
-                <div id="steps-div"></div>
-                <template>
-                    <div class="step-box">
-                        <div class="row" style="margin-left: 5%; margin-right: 5%;">
-                            <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
-                                <b>1.</b>
-                            </div>
-                            <div class="col-10" id="step-0">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, pariatur.
+    <nav id="topNavbar"></nav>
+
+    <main>
+        <div class="container body-container">
+            <div id="page-card"
+                style="background: #f6f6f6; border: 1px solid #e3e3e3; margin-top: 15px; border-radius: 3px;">
+                <div class="container">
+                    <h1 id="ailment-name"></h1>
+                    <br>
+                    <p id="symptoms"></p>
+                    <br>
+                    <div id="emergency-button" style="text-align: center;">
+                        <button class="btn btn-danger w-75">
+                            <span class="material-icons">call</span>
+                            <b>911</b>
+                        </button>
+                    </div>
+                    <br>
+                    <h2>Treatment steps</h2>
+                    <br>
+                    <div id="steps-div"></div>
+                    <template>
+                        <div class="step-box">
+                            <div class="row" style="margin-left: 5%; margin-right: 5%;">
+                                <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
+                                    <b>1.</b>
+                                </div>
+                                <div class="col-10" id="step-0">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                </template>
+                        <hr>
+                    </template>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Insert footer template here -->
+    <nav id="bottomNavbar"></nav>
 
     <script src="../scripts/firebaseAPI_TEAMDTC14.js"></script>
     <script src="../scripts/medical_info.js"></script>
+    <script src="../scripts/skeleton.js"></script>
 </body>
 
 </html>

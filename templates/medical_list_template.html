@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Information</title>
+
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <style>
+        
+
+        .location-card {
+            background-color: #0378a6;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: bold !important;
+        }
+
+        .body-container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="topNavbar"></nav>
+
+    <main>
+        <div class="container body-container">
+            <div id="ailment-list"></div>
+        </div>
+    </main>
+
+    <nav id="bottomNavbar"></nav>
+
+    <template id="ailmentCardTemplate">
+        <a href="">
+            <div class="container location-card">
+                <h2 id="ailment-container"></h2>
+            </div>
+        </a>
+    </template>
+
+    <script src="../scripts/firebaseAPI_TEAMDTC14.js"></script>
+    <script src="../scripts/medical_list.js"></script>
+    <script src="../scripts/skeleton.js"></script>
+</body>
+
+</html>

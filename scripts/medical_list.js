@@ -9,7 +9,7 @@ function displayAilmentsDynamically(collection) {
                 let newcard = ailmentCardTemplate.content.cloneNode(true);
 
                 newcard.querySelector('#ailment-container').innerHTML = Name;
-                newcard.querySelector('a').href = "/1800_202310_DTC14/templates/medical_info_template.html?docID=" + doc.id;
+                newcard.querySelector('a').href = "/templates/medical_info_template.html?docID=" + doc.id;
 
                 document.getElementById("ailment-list").appendChild(newcard)
             })

@@ -69,12 +69,12 @@
             <div class="weatherCard container p-4" s>
                 <div class="row">
                     <div class="col-12 container text-center">
-                        <h1 id="locationName border-bottom border-dark-subtle">Location</h1>
+                        <h1 id="city" class="border-bottom border-dark-subtle">Location</h1>
                         <div class="row pt-4">
                             <!-- Current Temperature button: click for more detailed info -->
                             <div class="currentTemp col-6 text-center">
                                 <h2>Temperature</h2>
-                                <p class="display-6">10°C</p>
+                                <p class="display-6" id="temp">10°C</p>
                             </div>
                             <!-- Current Weather button: click for more detailed info -->
                             <div class="currentWeather col-6">
@@ -109,7 +109,7 @@
                                 <span class="material-symbols-outlined">
                                     water_drop
                                 </span>
-                                <p class="display-9">5%</p>
+                                <p id="rain-chance" class="display-9">5%</p>
                             </div>
                         </div>
                     </div>

@@ -12,20 +12,23 @@ function get_user_location() {
     }
 }
 
+
 function get_weather(lat, lon) {
     $.ajax({
-        url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bddff69086f7c97eba94d171cbf10caa&units=metric`,
+        url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=bddff69086f7c97eba94d171cbf10caa&units=metric`,
         type: 'GET',
         success: function (data) {
+            console.log(data)
             populate_fields(data)
         }
     })
 }
 
 function populate_fields(data) {
-    document.getElementById('city').innerHTML = data.name
-    document.getElementById('temp').innerHTML = Math.round(data.main.temp) + ' °C'
-    document.getElementById('humidity').innerHTML = data.main.humidity + ' % Humidity'
+    document.getElementById('city').innerHTML = data.city.name
+    document.getElementById('temp').innerHTML = Math.round(data.list[0].main.temp) + ' °C'
+    document.getElementById('rain-chance').innerHTML = (data.list[0].pop * 100) + ' %'
+    document.getElementById('wind-speed').innerHTML = data.list[0].wind.speed + ' m/s'
 }
 
 $(document).ready(function () {

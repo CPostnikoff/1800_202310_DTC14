@@ -55,6 +55,11 @@
             margin-top: 100px;
             margin-bottom: 100px;
         }
+
+        .material-symbols-outlined {
+        font-variation-settings:'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 48;
+        }
+
     </style>
 
     </style>
@@ -77,11 +82,9 @@
                                 <p class="display-6" id="temp">10°C</p>
                             </div>
                             <!-- Current Weather button: click for more detailed info -->
-                            <div class="currentWeather col-6">
-                                <h2>Current Weather</h2>
-                                <span class="material-symbols-outlined">
-                                    partly_cloudy_day
-                                </span>
+                            <div class="weatherClass col-6">
+                                <h2>Weather</h2>
+                                <span id="currentWeather">N/A</span>
                             </div>
                         </div>
                     </div>
@@ -138,55 +141,55 @@
                     </button>
                 </div>
                 <div class="row p-2">
-                    <div class="col-4 text-start" id="extraDayOne">
+                    <div class="col-4 align-self-center" id="extraDayOne">
                         <h4>Tomorrow</h4>
                     </div>
-                    <div class="col-4 align-self-center">
-                        <h5>Weather</h5>
+                    <div class="weatherClass col-4 align-self-center">
+                        <h5 id="dayOneWeather">Weather</h5>
                     </div>
                     <div class="col-4 align-self-center align-items-center" id="dayOneTemp">
                         <h5>Temp</h5>
                     </div>
                 </div>
                 <div class="row p-2">
-                    <div class="col-4 text-start" id="extraDayTwo">
+                    <div class="col-4 align-self-center" id="extraDayTwo">
                         <h4>Friday</h4>
                     </div>
-                    <div class="col-4 align-self-center">
-                        <h5>Weather</h5>
+                    <div class="weatherClass col-4 align-self-center">
+                        <h5 id="dayTwoWeather">Weather</h5>
                     </div>
                     <div class="col-4 align-self-center align-items-center" id="dayTwoTemp">
                         <h5>Temp</h5>
                     </div>
                 </div>
                 <div class="row p-2">
-                    <div class="col-4 text-start" id="extraDayThree">
+                    <div class="col-4 align-self-center" id="extraDayThree">
                         <h4>Saturday</h4>
                     </div>
                     <div class="col-4 align-self-center">
-                        <h5>Weather</h5>
+                        <h5 id="dayThreeWeather">Weather</h5>
                     </div>
                     <div class="col-4 align-self-center align-items-center" id="dayThreeTemp">
                         <h5>Temp</h5>
                     </div>
                 </div>
                 <div class="row p-2">
-                    <div class="col-4 text-start" id="extraDayFour">
+                    <div class="col-4 align-self-center" id="extraDayFour">
                         <h4>Sunday</h4>
                     </div>
-                    <div class="col-4 align-self-center">
-                        <h5>Weather</h5>
+                    <div class="weatherClass col-4 align-self-center">
+                        <h5 id="dayFourWeather">Weather</h5>
                     </div>
                     <div class="col-4 align-self-center align-items-center" id="dayFourTemp">
                         <h5>Temp</h5>
                     </div>
                 </div>
                     <div class="row p-2">
-                    <div class="col-4 text-start" id="extraDayFive">
+                    <div class="col-4 align-self-center" id="extraDayFive">
                         <h4>Tuesday</h4>
                     </div>
-                    <div class="col-4 align-self-center">
-                        <h5>Weather</h5>
+                    <div class="weatherClass col-4 align-self-center">
+                        <h5 id="dayFiveWeather">Weather</h5>
                     </div>
                     <div class="col-4 align-self-center align-items-center" id="dayFiveTemp">
                         <h5>Temp</h5>

@@ -39,9 +39,10 @@ function insertAccountInfoFromFirestore() {
         var timestamp = new firebase.firestore.Timestamp(seconds, nanoseconds);
         var favouriteLocations = userDoc.data().favourites;
 
-        for (i = 0; i < favouriteLocations.length; i++) {
-            let favourite = favouriteLocations[i]
-            document.getElementById("favourites-go-here").innerHTML += (favourite + "<br>")
+        for (j = 0; j < favouriteLocations.length; j++) {
+            let favourite = favouriteLocations[j]
+            correctedName = correctedTitle(favourite)
+            document.getElementById("favourites-go-here").innerHTML += (correctedName + "<br>")
         }
         const date_format = { year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = new Intl.DateTimeFormat('en-US', date_format).format(timestamp.toDate()); // format the date using Intl.DateTimeFormat

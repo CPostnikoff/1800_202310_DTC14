@@ -33,17 +33,38 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
+        .body-container {
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        #user-info {
+            color:white
+        }
+
         h1 {
             font-weight: bold;
+            color: white;
         }
 
-        p {
-            font-size: 1.6rem;
+        #favourites-go-here {
+            color: white;
         }
 
-        .body-container {
-            margin-top: 100px;
-            margin-bottom: 100px;
+        #page-card {
+            background: #0378a6;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        #change-name,
+        #change-lang,
+        #access-options {
+            background-color: #f26444;
+            margin-top: 0px !important;
+            padding-top: 0px !important;
+            margin-bottom: 10px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -53,8 +74,7 @@
 
     <main>
         <div class="container body-container">
-            <div id="page-card"
-                style="background: #f6f6f6; border: 1px solid #e3e3e3; margin-top: 15px; border-radius: 3px;">
+            <div id="page-card">
                 <div class="container">
                     <div id="user-info">
                         <h1 id="name-goes-here">Username</h1>
@@ -62,17 +82,25 @@
                         <h5>User since: <span id="creation-date-goes-here">DateCreated</span></h5>
                     </div>
                     <br>
-                    <div id="first-input-box" style="text-align: center;">
-                        <button class="btn btn-dark w-75 mt-3 mb-3">Change Name</button>
+                    <div id="name-input-box" style="text-align: center;">
+                        <button id="change-name" class="btn btn-dark w-75 mt-3 mb-3">Change Name</button>
+                    </div>
+                    <br>
+                    <div id="lang-input-box" style="text-align: center;">
+                        <button id="change-lang" class="btn btn-dark w-75 mt-3 mb-3">Change Language</button>
+                    </div>
+                    <br>
+                    <div id="access-input-box" style="text-align: center;">
+                        <button id="access-options" class="btn btn-dark w-75 mt-3 mb-3">Accessibility Options</button>
                     </div>
                     <hr>
-                    <h1>Favourite Locations</h1>
+                    <h1 style="color: white;">Favourite Locations</h1>
                     <div id="second-input-box" style="text-align: center;">
                         <div id="favourites-go-here"></div>
                     </div>
                     <hr>
-                    <div id="third-input-box" style="text-align: center;">
-                        <button class="btn btn-danger w-75 mt-3 mb-3">Logout</button>
+                    <div id="logout-input-box" style="text-align: center;">
+                        <button id="logout" class="btn btn-danger w-75 mt-3 mb-3">Logout</button>
                     </div>
                 </div>
             </div>

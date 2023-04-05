@@ -27,7 +27,7 @@ function get_weather(lat, lon) {
 function populate_fields(data) {
     document.getElementById('city').innerHTML = data.city.name;
     document.getElementById('temp').innerHTML = Math.round(data.list[0].main.temp) + ' °C';
-    document.getElementById('rain-chance').innerHTML = (data.list[0].pop * 100) + ' %';
+    document.getElementById('rain-chance').innerHTML = Math.round((data.list[0].pop * 100)) + ' %';
     document.getElementById('wind-speed').innerHTML = data.list[0].wind.speed + ' m/s';
   
     // Get the date for the next 5 days

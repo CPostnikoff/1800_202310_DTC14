@@ -31,21 +31,39 @@
         h2,
         h1 {
             font-weight: bold;
+            color: white !important;
         }
 
         p,
         b {
             font-size: 1.6rem;
+            color: white !important;
+        }
+
+        body {
+            color: white;
         }
 
         .col-10 {
             font-size: 1.6rem !important;
             padding: 10px !important;
+            color: white;
         }
 
         .body-container {
             margin-top: 100px;
             margin-bottom: 100px;
+        }
+
+        #page-card {
+            background: #0378a6;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .treatment-text {
+            font-size: 1.6rem !important;
+            padding: 10px !important;
         }
     </style>
 </head>
@@ -56,8 +74,7 @@
 
     <main>
         <div class="container body-container">
-            <div id="page-card"
-                style="background: #f6f6f6; border: 1px solid #e3e3e3; margin-top: 15px; border-radius: 3px;">
+            <div id="page-card">
                 <div class="container">
                     <h1 id="ailment-name"></h1>
                     <br>
@@ -79,7 +96,7 @@
                                 <div class="col-2 my-auto" style="text-align: end; padding-right: 35px;">
                                     <b>1.</b>
                                 </div>
-                                <div class="col-10" id="step-0">
+                                <div class="col-10 treatment-text" id="step-0">
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,10 @@
-all_locations = []
-all_favourite_locations = []
+// stores a list of all currently dispalyed locations
+var all_locations = []
+// stores a list of all of the current users favourites
+var all_favourite_locations = []
 
+
+// confirms that a user is logged in
 function verifyUserLogin() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -16,6 +20,7 @@ function verifyUserLogin() {
 }
 verifyUserLogin()
 
+// adds an evenet lister to each button on the page
 const button_selection = () => {
     document.querySelectorAll("button").forEach(button => {
         let id = button.getAttribute("id").toString()
@@ -26,6 +31,7 @@ const button_selection = () => {
     })
 }
 
+// converts a name with underscores to a title with spaces and capital letters
 function correctedTitle(title) {
     to_cap = title.split("_");
     for (i = 0; i < to_cap.length; i++) {
@@ -35,14 +41,13 @@ function correctedTitle(title) {
     return final_title
 }
 
-
+// displays all locations that are stored within the locations collection in firebase
 function displayLocationsDynamically(collection) {
     let locationCardTemplate = document.getElementById("locationCardTemplate")
 
     db.collection(collection).get()
         .then(allLocations => {
             allLocations.forEach(doc => {
-                // console.log(doc.data())
                 var title = correctedTitle(doc.id);
                 var details = doc.data().description;
                 var image = doc.data().picture;
@@ -64,6 +69,7 @@ function displayLocationsDynamically(collection) {
     console.log(all_locations)
 }
 
+// hides/shows elements depending on what filter button is clicked
 function filterDisplayedLocations(tag_to_filter) {
     if (tag_to_filter == "Favourites") {
         for (i = 0; i < all_locations.length; i++) {
@@ -92,5 +98,5 @@ function filterDisplayedLocations(tag_to_filter) {
 
 
 
-    displayLocationsDynamically("locations")
-    button_selection()
+displayLocationsDynamically("locations")
+button_selection()

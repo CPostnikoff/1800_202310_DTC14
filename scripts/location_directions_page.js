@@ -10,7 +10,6 @@ function correctedTitle(title) {
 let destination_coordinates = 0
 
 function displayLocationDetails() {
-    // console.log(window.location.href)
 
     let current_url_split = window.location.href.split("=")
     let current_location = current_url_split[1]
@@ -19,13 +18,9 @@ function displayLocationDetails() {
 
     db.collection("locations").doc(current_location).get()
         .then(current_location => {
-            // console.log(current_location.data())
             var title = correctedTitle(window.location.href.split("=")[1]);
             var details = current_location.data().description;
             destination_coordinates = current_location.data().location;
-            // console.log(title)
-            // console.log(details)
-            // console.log(destination_coordinates)
             document.querySelector('#location_name').innerHTML = title;
             document.querySelector('#location_description').innerHTML = details;
         })
@@ -43,12 +38,6 @@ function updateTravelDetails(travel_distance, travel_duration) {
     document.querySelector('#travel_time').innerHTML = adjusted_duration + " Minutes";
 }
 
-//
-//
-//
-//
-//
-//
 
 function get_directions_from_user_location() {
     navigator.geolocation.getCurrentPosition(user_position)
@@ -59,7 +48,6 @@ function get_directions_from_user_location() {
 }
 
 function get_directional_map(user_location, coordinates) {
-    // console.log(coordinates)
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtZXJvbmpwIiwiYSI6ImNsZXFxZ3EwaTBsYXgzeXFyMXU2bWc4YzAifQ.eCt8E49PH-tYQWbe9F6nCA';
     let map = new mapboxgl.Map({
         container: 'map',
@@ -109,26 +97,16 @@ function get_directional_map(user_location, coordinates) {
     ))
 }
 
-function get_user_location() {
-    navigator.geolocation.getCurrentPosition(user_position)
-    function user_position(position) {
-        user_latitude = position.coords.latitude
-        user_longitude = position.coords.longitude
-        center_map([user_longitude, user_latitude])
-    }
-}
 
 function get_route_coordinates_then_draw_map(coordinates) {
     $.ajax({
         url: `https://api.mapbox.com/directions/v5/mapbox/driving/${coordinates[0]};${coordinates[1]}?geometries=geojson&access_token=pk.eyJ1IjoiY2FtZXJvbmpwIiwiYSI6ImNsZXFxZ3EwaTBsYXgzeXFyMXU2bWc4YzAifQ.eCt8E49PH-tYQWbe9F6nCA`,
         type: "GET",
         success: function (response) {
-            // console.log(response)
             distance = response.routes[0].distance
             duration = response.routes[0].duration
             updateTravelDetails(distance, duration)
             let user_route = response.routes[0].geometry.coordinates
-            // console.log(user_route)
             get_directional_map(coordinates[0], user_route)
         }
     })

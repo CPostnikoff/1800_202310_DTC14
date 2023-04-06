@@ -1,3 +1,4 @@
+// Converts the name of a location with underscores, to a title with spaces
 function correctedTitle(title) {
     to_cap = title.split("_")
     for (i = 0; i < to_cap.length; i++) {
@@ -9,6 +10,8 @@ function correctedTitle(title) {
 
 let destination_coordinates = 0
 
+
+// Populates the HTML page with the location details
 function displayLocationDetails() {
 
     let current_url_split = window.location.href.split("=")
@@ -28,6 +31,7 @@ function displayLocationDetails() {
 
 displayLocationDetails("locations")
 
+// populates HTML fields with travel details
 function updateTravelDetails(travel_distance, travel_duration) {
     console.log(travel_distance)
     console.log(travel_duration)
@@ -39,6 +43,7 @@ function updateTravelDetails(travel_distance, travel_duration) {
 }
 
 
+// gets coordinate array from the users current position to the destination
 function get_directions_from_user_location() {
     navigator.geolocation.getCurrentPosition(user_position)
     function user_position(position) {
@@ -47,6 +52,8 @@ function get_directions_from_user_location() {
     }
 }
 
+
+// draws the map with the route coordinates generated
 function get_directional_map(user_location, coordinates) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FtZXJvbmpwIiwiYSI6ImNsZXFxZ3EwaTBsYXgzeXFyMXU2bWc4YzAifQ.eCt8E49PH-tYQWbe9F6nCA';
     let map = new mapboxgl.Map({
@@ -97,7 +104,7 @@ function get_directional_map(user_location, coordinates) {
     ))
 }
 
-
+// gets the coordinates of the route then calls the get_directional_map function
 function get_route_coordinates_then_draw_map(coordinates) {
     $.ajax({
         url: `https://api.mapbox.com/directions/v5/mapbox/driving/${coordinates[0]};${coordinates[1]}?geometries=geojson&access_token=pk.eyJ1IjoiY2FtZXJvbmpwIiwiYSI6ImNsZXFxZ3EwaTBsYXgzeXFyMXU2bWc4YzAifQ.eCt8E49PH-tYQWbe9F6nCA`,
@@ -112,4 +119,5 @@ function get_route_coordinates_then_draw_map(coordinates) {
     })
 }
 
+// starts the process of getting directions
 get_directions_from_user_location()

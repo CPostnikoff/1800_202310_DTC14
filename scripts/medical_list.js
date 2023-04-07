@@ -1,3 +1,4 @@
+// populates the "Medical" page of CoolAid with the ailments stored in the database
 function displayAilmentsDynamically(collection) {
     let ailmentCardTemplate = document.getElementById("ailmentCardTemplate")
 

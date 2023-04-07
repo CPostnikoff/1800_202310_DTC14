@@ -1,3 +1,5 @@
+// Inserts the medical information stored in the database for a specific ailment
+// into the specific ailment page within CoolAid
 function displayMedicalInfo(ailmentID) {
     db.collection("medical_info").doc(ailmentID).get().then(ailment => {
         if (ailment.exists) {

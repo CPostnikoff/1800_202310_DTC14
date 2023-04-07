@@ -14,7 +14,7 @@ function get_user_location() {
 }
 
 
-// Get the weather data from the API and execute the functions to populate the fields
+// Read the weather data from the API and execute the functions to populate the fields
 function get_weather(lat, lon) {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=bddff69086f7c97eba94d171cbf10caa&units=metric`,
@@ -28,9 +28,11 @@ function get_weather(lat, lon) {
 
 
 // Generates the date for the next 5 days and finds the document containing the specific date at 12:00:00
+// This is done because the API returns data every 3 hours, so we need to find the document containing the date at 12:00:00
+// Documents are stored in another variable
 // :param data: The data from the API
 function getNextFiveDatesAndDocs(data) {
-        // Get the date for the next 5 days
+        // Create a unique variable for the next 5 days
         const today = new Date();
         var dayOne = today.getDate() +1;
         var dayTwo = today.getDate() +2;
@@ -81,7 +83,7 @@ function populate_fields(data) {
 }
 
 
-// Find the document containing the listed date within a collection
+// Iterate an entireFind the document containing the listed date within a collection
 // :param dateText: The date to search for, in the format YYYY-MM-DD HH:MM:SS
 function findDocOfDate(data, dateText) {
     for (let i = 0; i < data.list.length; i++) {
@@ -125,6 +127,7 @@ function replaceWeatherWithIcon(weatherDescription, elementID) {
     }
 }
 
+// Execute functions in this file upon sucessfully loading the page
 $(document).ready(function () {
     get_user_location()
 })

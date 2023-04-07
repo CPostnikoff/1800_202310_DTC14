@@ -72,7 +72,7 @@ It has the following subfolders and files:
     location_page.js                    #
     medical_info.js                     #
     medical_list.js                     #
-    open_weather_map.js                 # JavaScript file; reads from OpenWeatherMap API and injects data into weather_page_template.html          #
+    open_weather_map.js                 # JavaScript file; reads from OpenWeatherMap API and injects data into
     skeleton.js                         # JavaScript file for loading header/navbar
     user_preferences.js                 # 
 ├── styles                              # Folder for styles

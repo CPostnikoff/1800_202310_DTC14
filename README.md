@@ -83,7 +83,7 @@ It has the following subfolders and files:
 ├──templates
     favourites_templates.html           # HTML template of one of the favourite pages would've looked like
     location_directions_template.html   # HTML template for the directions/map page
-    location_options_template.html      # 
+    location_options_template.html      # HTML template for the card
     location_page_template.html         # HTML template for a specific, selected location
     login_card_template.html            # HTML template of an earlier version of the login card
     map_box_template.html               # HTML template for testing MapBox

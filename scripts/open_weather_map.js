@@ -1,3 +1,4 @@
+// Get user location via navigator.geolocation
 function get_user_location() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(user_position);
@@ -13,38 +14,48 @@ function get_user_location() {
 }
 
 
+// Get the weather data from the API and execute the functions to populate the fields
 function get_weather(lat, lon) {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=bddff69086f7c97eba94d171cbf10caa&units=metric`,
         type: 'GET',
         success: function (data) {
-            console.log(data)
-            populate_fields(data)
+            getNextFiveDatesAndDocs(data);
+            populate_fields(data);
         }
     })
 }
 
+
+// Generates the date for the next 5 days and finds the document containing the specific date at 12:00:00
+// :param data: The data from the API
+function getNextFiveDatesAndDocs(data) {
+        // Get the date for the next 5 days
+        const today = new Date();
+        var dayOne = today.getDate() +1;
+        var dayTwo = today.getDate() +2;
+        var dayThree = today.getDate() +3;
+        var dayFour = today.getDate() +4;
+        var dayFive = today.getDate() + 5;
+    
+        // Find the document containing the date for the next 5 days
+        dateFormatToday = data.list[0].dt_txt.split(' ')[0];
+        dayOneDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayOne) + ' 12:00:00');
+        dayTwoDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayTwo) + ' 12:00:00');
+        dayThreeDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayThree) + ' 12:00:00');
+        dayFourDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayFour) + ' 12:00:00');
+        dayFiveDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayFive) + ' 12:00:00');
+}
+
+
+// Populate the fields with the data from the API
+// :param data: The data from the API
 function populate_fields(data) {
+    // Populate user city, current weather, rain chance, and wind speed
     document.getElementById('city').innerHTML = data.city.name;
     document.getElementById('temp').innerHTML = Math.round(data.list[0].main.temp) + ' °C';
     document.getElementById('rain-chance').innerHTML = Math.round((data.list[0].pop * 100)) + ' %';
     document.getElementById('wind-speed').innerHTML = data.list[0].wind.speed + ' m/s';
-  
-    // Get the date for the next 5 days
-    const today = new Date();
-    var dayOne = today.getDate() +1;
-    var dayTwo = today.getDate() +2;
-    var dayThree = today.getDate() +3;
-    var dayFour = today.getDate() +4;
-    var dayFive = today.getDate() + 5;
-
-    // Find the document containing the date for the next 5 days
-    dateFormatToday = data.list[0].dt_txt.split(' ')[0];
-    dayOneDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayOne) + ' 12:00:00');
-    dayTwoDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayTwo) + ' 12:00:00');
-    dayThreeDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayThree) + ' 12:00:00');
-    dayFourDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayFour) + ' 12:00:00');
-    dayFiveDocument = findDocOfDate(data, replaceDay(dateFormatToday, dayFive) + ' 12:00:00');
 
     // Populate the details for the next 5 days
     $('#extraDayOne').html(dayOneDocument.dt_txt.split(' ')[0].slice(5));
@@ -67,8 +78,8 @@ function populate_fields(data) {
     $('#dayThreeWeather').html(replaceWeatherWithIcon(dayThreeDocument.weather[0].main, '#dayThreeWeather'));
     $('#dayFourWeather').html(replaceWeatherWithIcon(dayFourDocument.weather[0].main, '#dayFourWeather'));
     $('#dayFiveWeather').html(replaceWeatherWithIcon(dayFiveDocument.weather[0].main, '#dayFiveWeather'));
-
 }
+
 
 // Find the document containing the listed date within a collection
 // :param dateText: The date to search for, in the format YYYY-MM-DD HH:MM:SS
@@ -80,6 +91,7 @@ function findDocOfDate(data, dateText) {
       }
     }
 }
+
 
 // Update the date to a different day
 // :param today: The date to update, in the format YYYY-MM-DD
@@ -93,6 +105,8 @@ function replaceDay(today, newDate) {
 }
 
 // Replace retreived weather description with an icon
+// :param weatherDescription: The weather description to replace retreived from the API
+// :param elementID: The ID of the element to replace
 function replaceWeatherWithIcon(weatherDescription, elementID) {
     if (weatherDescription === 'Clouds') {
         $(elementID).replaceWith('<span class="material-symbols-outlined">cloudy</span>');
